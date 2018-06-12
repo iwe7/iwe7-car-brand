@@ -1,0 +1,28 @@
+<layout-outlet>
+  <div header [formGroup]="form">
+    <input type="text" formControlName="key" #input class="search" placeholder="请输入关键字">
+  </div>
+  <div class="car-brand-container">
+    <index-list id="car-brand-selector">
+      <ul>
+        <li *ngFor="let item of list;last as l;" [ngForEnd]="l" (ngForEnded)="ngForEnded($event)" [indexListAnchor]="item.key">
+          <h2 class="title">{{item.key}}</h2>
+          <div class="car-brand-list">
+            <span [scrollToMe]="it.id === selectId" scrollId="car-brand-selector" [class.active]="it.id === selectId" (click)="select(it)" *ngFor="let it of item.res">{{it.name}}</span>
+          </div>
+        </li>
+      </ul>
+    </index-list>
+  </div>
+  <div class="footer" footer>
+    <navbar-outlet>
+      <div navbarLeft (click)="sure()">确定</div>
+      <div class="navbar-title" navbarTitle>
+        {{title}}
+      </div>
+      <div navbarRight (click)="next()">
+        下一步
+      </div>
+    </navbar-outlet>
+  </div>
+</layout-outlet>

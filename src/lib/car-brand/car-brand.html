@@ -1,0 +1,12 @@
+<div class="car-brand-container">
+  <div class="car-brand-title" (click)="selectBrand()">
+    <span *ngIf="brand">{{brand.title}}</span>
+    <span *ngIf="!brand">选择品牌</span>
+    <i class="iconfont icon-sanjiao"></i>
+  </div>
+  <div class="car-brand-type" (click)="selectType()">
+    <span *ngIf="type">{{type.title}}</span>
+    <span *ngIf="!type">选择车型</span>
+    <i class="iconfont icon-sanjiao"></i>
+  </div>
+</div>

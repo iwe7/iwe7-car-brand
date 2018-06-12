@@ -1,0 +1,36 @@
+:host {
+  display: block;
+  height: 45px;
+  position: relative;
+  width: 100%;
+  background: #fff;
+  .car-brand-container {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    left: 0px;
+    bottom: 0px;
+    display: flex;
+    flex-direction: row;
+    .car-brand-title,
+    .car-brand-type {
+      height: 45px;
+      line-height: 45px;
+      text-align: center;
+      flex: 1;
+      position: relative;
+    }
+    .car-brand-title {
+      &:after {
+        position: absolute;
+        top: 0px;
+        bottom: 0px;
+        right: 0px;
+        width: 1px;
+        transform: translateX(.5);
+        background: #efefef;
+        content: " ";
+      }
+    }
+  }
+}

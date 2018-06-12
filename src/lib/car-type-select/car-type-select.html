@@ -1,0 +1,21 @@
+<layout-outlet>
+  <div header [formGroup]="form">
+    <input type="text" formControlName="key" class="search" placeholder="请输入关键字">
+  </div>
+  <div class="car-brand-type-container">
+    <ul>
+      <li *ngFor="let item of list" [class.active]="selectId === item.id" (click)="selectType(item)">{{item.name}}</li>
+    </ul>
+  </div>
+  <div class="footer" footer>
+    <navbar-outlet>
+      <div navbarLeft (click)="pre()">上一步</div>
+      <div class="navbar-title" navbarTitle>
+        {{title}}
+      </div>
+      <div navbarRight (click)="sure()">
+        确定
+      </div>
+    </navbar-outlet>
+  </div>
+</layout-outlet>
